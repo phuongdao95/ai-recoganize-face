@@ -25,7 +25,7 @@ namespace Simple_Face_Recognition_App
         private Image<Bgr, Byte> currentFrame = null;
         Mat frame = new Mat();
         private bool facesDetectionEnabled = false;
-        CascadeClassifier faceCasacdeClassifier = new CascadeClassifier(@"C:\haarcascades\haarcascade_frontalface_alt_tree.xml");
+        CascadeClassifier faceCasacdeClassifier = new CascadeClassifier("haarcascade_frontalface_alt.xml");
         Image<Bgr, Byte> faceResult = null;
         List<Image<Gray, Byte>> TrainedFaces = new List<Image<Gray, byte>>();
         List<int> PersonsLabes = new List<int>();
@@ -78,7 +78,7 @@ namespace Simple_Face_Recognition_App
                         foreach (var face in faces)
                         {
                             //Draw square around each face 
-                           // CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Red).MCvScalar, 2);
+                            CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Red).MCvScalar, 2);
 
                             //Step 3: Add Person 
                             //Assign the face to the picture Box face picDetected
